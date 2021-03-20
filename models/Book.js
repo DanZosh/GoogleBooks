@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const postSchema = new Schema({
+const bookSchema = new Schema({
 
   title: { type: String },
   authors: [{ type: String }],

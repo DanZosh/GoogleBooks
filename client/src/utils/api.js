@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = {
-    async getBooks(book){
+    async getGoogleBooks(book){
         return{
             data:[
                 {   id:1,
@@ -29,7 +29,17 @@ const API = {
         }
         // return axios.get("");
 
+    },//now add a get request of our saved books from our database.
+    getBooks(){
+        return axios.get ( "/api/books")
+    },
+    //now add a post request of our saved book to our database.
+    async addBook(book){
+        return axios.post ( "/api/books", book) //route and data format within the ()
+        //make a post to my database via the "/api/books" route and the content of thatpost is "book". 
+
+
     }
-}
+};
 
 export default API

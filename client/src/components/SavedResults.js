@@ -1,10 +1,10 @@
 import React from "react"
 import { Card } from "react-bootstrap"
-import SaveBookButton from "./SaveBookButton"
+// import SaveBookButton from "./SaveBookButton"
 
 
 //import the state store for books to render some results
-function Results({booksProp}){
+function SavedResults({booksProp}){
 
     return(
         <Card className="my-3">
@@ -21,7 +21,7 @@ function Results({booksProp}){
                         <Card.Body>
                             <p>{book.title}</p>
                             <p>{book.description}</p>
-                            <SaveBookButton bookProp={book}/>
+                            {/* <SaveBookButton bookProp={book}/> */}
                         </Card.Body>
                     </Card>
                 ))}
@@ -37,4 +37,4 @@ function Results({booksProp}){
 
 
 }
-export default Results 
+export default SavedResults 

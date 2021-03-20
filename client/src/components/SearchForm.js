@@ -10,7 +10,7 @@ function SearchForm({setBooksProp}){
 
         event.preventDefault();
         console.log(bookInput.current.value)
-        API.getBooks()
+        API.getGoogleBooks()
             .then( ({data}) => {
                 console.log(data);
                 setBooksProp(data) //use the setBooksProp method to revise state linked in line 5 to pass the data from the API call into the state. The method to update state is defined in line 6 on SearchPage
@@ -26,9 +26,6 @@ function SearchForm({setBooksProp}){
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Book Name</Form.Label>
                 <Form.Control ref ={bookInput} type="text" placeholder="Enter book name" />
-                <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-                </Form.Text>
             </Form.Group>
             <Button variant="primary" type="submit">
                 Search
