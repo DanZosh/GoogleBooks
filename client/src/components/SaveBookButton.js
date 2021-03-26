@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import API from "../utils/API"
 
-function SaveBookButton({bookProp, updateBook}){
+function SaveBookButton({bookProp}){
     const saveBook = () =>{
         console.log("book:", bookProp)
         API.addBook(bookProp)

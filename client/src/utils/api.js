@@ -37,9 +37,11 @@ const API = {
     async addBook(book){
         return axios.post ( "/api/books", book) //route and data format within the ()
         //make a post to my database via the "/api/books" route and the content of thatpost is "book". 
-
-
-    }
+    },
+        //now add a post request of our saved book to our database.
+        async deleteBook(bookID){
+            return axios.delete ( `/api/books/${bookID}`) //route and data format 
+        },
 };
 
 export default API

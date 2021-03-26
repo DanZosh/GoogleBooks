@@ -1,10 +1,10 @@
 import React from "react"
-import { Card } from "react-bootstrap"
-// import SaveBookButton from "./SaveBookButton"
+import { Button, Card } from "react-bootstrap"
+import DeleteBookButton from "./DeleteBookButton"
 
 
 //import the state store for books to render some results
-function SavedResults({booksProp}){
+function SavedResults({booksProp, getBooks}){
 
     return(
         <Card className="my-3">
@@ -16,12 +16,16 @@ function SavedResults({booksProp}){
                 {booksProp.map((book)=>( //we're defining book here as the argument which is why we can use bookProp to pass into the SaveBookButton below
                     <Card 
                         className="my-3"
-                        key={book.id}
+                        key={book._id}
                     >
                         <Card.Body>
+                            <DeleteBookButton 
+                                bookIDProp={book._id}
+                                getBooks={getBooks}
+                                >Delete</DeleteBookButton>
+                            <Button href={book.link}>View</Button>
                             <p>{book.title}</p>
                             <p>{book.description}</p>
-                            {/* <SaveBookButton bookProp={book}/> */}
                         </Card.Body>
                     </Card>
                 ))}
